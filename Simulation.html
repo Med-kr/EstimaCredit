@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulateur de prêt - EstimaCredit</title>
+    <!--------------------------------------------------GOGLE FONTS AWESOME-------------------------------------------------->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!--------------------------------------------------FONT FAMILY-------------------------------------------------->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!----------------------------------------------------TAILWIND---------------------------------------------------->
+
+    <link rel="stylesheet" href="src/output.css" />
+
+    <!----------------------------------------------------STYLE CSS---------------------------------------------------->
+
+    <style>
+      body {
+        background: linear-gradient(to bottom, #e5e7eb 0%, #f3f4f6 100%);
+      }
+    </style>
+  </head>
+
+  <!----------------------------------------------------------BODY----------------------------------------------------------->
+
+  <body class="min-h-screen">
+    <!----------------------------------------------------------HEADER----------------------------------------------------------->
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+      <nav class="flex items-center justify-between px-6 py-3">
+        <!--------------------------------------------------LOGO DE ECTIMACREDIT-------------------------------------------------->
+
+        <a href="index.html">
+          <img src="images/Logo.png" alt="Logo du site" class="w-40 md:w-32" />
+        </a>
+
+        <!--------------------------------------------------AFFICHAGE MENU MOBILE-------------------------------------------------->
+
+        <div class="md:hidden">
+          <input type="checkbox" id="menu" class="hidden peer" />
+          <label for="menu" class="cursor-pointer">
+            <img src="images/menu.png" alt="Menu" class="w-7 h-7" />
+          </label>
+
+          <menu
+            class="hidden peer-checked:flex absolute top-14 right-4 bg-[#0d1b2a] text-white rounded-lg shadow-lg flex-col gap-3 p-4 w-56"
+          >
+            <label
+              for="menu"
+              class="text-right cursor-pointer text-lg flex justify-center items-center"
+              >✖</label
+            >
+
+            <a
+              href="index.html"
+              class="nav-link px-4 py-2 bg-[#e2e8f0] rounded-lg text-[#1b2a41] font-medium transition Durée-300 hover:bg-[#0d1b2a] hover:text-white hover:shadow-[0_0_15px_2px_#778DA9]"
+            >
+              Accueil
+            </a>
+            <a
+              href="#Simulation"
+              class="nav-link px-4 py-2 bg-[#e2e8f0] rounded-lg text-[#1b2a41] font-medium transition Durée-300 hover:bg-[#0d1b2a] hover:text-white hover:shadow-[0_0_15px_2px_#778DA9]"
+            >
+              Simulation
+            </a>
+            <a
+              href="Résultat.html"
+              class="nav-link px-4 py-2 bg-[#e2e8f0] rounded-lg text-[#1b2a41] font-medium transition Durée-300 hover:bg-[#0d1b2a] hover:text-white hover:shadow-[0_0_15px_2px_#778DA9]"
+            >
+              Résultats
+            </a>
+            <a
+              href="A-Propos.html"
+              class="nav-link px-4 py-2 bg-[#e2e8f0] rounded-lg text-[#1b2a41] font-medium transition Durée-300 hover:bg-[#0d1b2a] hover:text-white hover:shadow-[0_0_15px_2px_#778DA9]"
+            >
+              À propos
+            </a>
+          </menu>
+        </div>
+
+        <!--------------------------------------------------AFFICHAGE MENU DESKTOP-------------------------------------------------->
+
+        <menu
+          class="hidden md:flex items-center gap-6 text-green-800 font-semibold"
+        >
+          <a
+            href="index.html"
+            class="nav-link px-4 py-2 bg-[#e2e8f0] rounded-lg text-[#1b2a41] font-medium transition Durée-300 hover:bg-[#0d1b2a] hover:text-white hover:shadow-[0_0_15px_2px_#778DA9]"
+          >
+            Accueil
+          </a>
+          <a
+            href="#Simulation"
+            class="nav-link px-4 py-2 bg-[#e2e8f0] rounded-lg text-[#1b2a41] font-medium transition Durée-300 hover:bg-[#0d1b2a] hover:text-white hover:shadow-[0_0_15px_2px_#778DA9]"
+          >
+            Simulation
+          </a>
+          <a
+            href="Résultat.html"
+            class="nav-link px-4 py-2 bg-[#e2e8f0] rounded-lg text-[#1b2a41] font-medium transition Durée-300 hover:bg-[#0d1b2a] hover:text-white hover:shadow-[0_0_15px_2px_#778DA9]"
+          >
+            Résultats
+          </a>
+          <a
+            href="A-Propos.html"
+            class="nav-link px-4 py-2 bg-[#e2e8f0] rounded-lg text-[#1b2a41] font-medium transition Durée-300 hover:bg-[#0d1b2a] hover:text-white hover:shadow-[0_0_15px_2px_#778DA9]"
+          >
+            À propos
+          </a>
+        </menu>
+      </nav>
+    </header>
+
+    <!--------------------------------------------------MAIN -- DETAIL DE ECTIMACREDIT-------------------------------------------------->
+    <div class="container mx-auto px-4 py-6 max-w-lg">
+      <!--------------------------------------------------SIMULATION FORM CARD-------------------------------------------------->
+
+      <div
+        class="bg-white rounded-2xl shadow-xl border-2 border-gray-200 p-6 mb-6"
+      >
+        <div class="flex items-start mb-6">
+          <div class="bg-gray-100 rounded-full p-4 mr-4 mt-1">
+            <i class="fas fa-calculator text-2xl text-gray-700"></i>
+          </div>
+          <div class="flex-1">
+            <h1 class="text-lg font-bold text-gray-900 mb-1 ml-6">
+              Simulateur de prêt - EstimaCredit
+            </h1>
+            <p class="text-xs text-orange-600 flex items-center">
+              Remplissez les informations ci-dessous pour simuler votre prêt
+            </p>
+          </div>
+        </div>
+
+        <!--------------------------------------------------FORMULAIRE-------------------------------------------------->
+
+        <div class="space-y-5">
+          <div>
+            <label class="block text-sm font-bold text-gray-900 mb-2"
+              >Type de prêt :</label
+            >
+            <select
+              id="Type_Prêt"
+              class="w-full px-3 py-2.5 border-2 border-gray-300 rounded-lg bg-gray-50 text-gray-700 text-sm focus:outline-none focus:border-blue-500"
+            >
+              <option value="">Sélectionner un type</option>
+              <option value="personnel">💰 Prêt personnel</option>
+              <option value="immobilier">🏠 Prêt Maison</option>
+              <option value="auto">🚗 Prêt Appartement</option>
+              <option value="terrain">🌿 Prêt Terrain</option>
+              <option value="entreprise">🏢 Prêt Petite entreprise</option>
+              <option value="mariage">💍 Prêt Mariage</option>
+              <option value="etudiant">🎓 Prêt étudiant</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-bold text-gray-900 mb-2"
+              >Montant du prêt (Dh) :</label
+            >
+            <input
+              type="number"
+              id="Montant_Prêt"
+              class="w-full px-3 py-2.5 border-2 border-gray-300 rounded-lg bg-gray-50 text-gray-700 text-sm focus:outline-none focus:border-blue-500"
+              placeholder="0"
+            />
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-sm font-bold text-gray-900 mb-2"
+                >Durée :</label
+              >
+              <input
+                type="number"
+                id="Durée"
+                class="w-full px-3 py-2.5 border-2 border-gray-300 rounded-lg bg-gray-50 text-gray-700 text-sm focus:outline-none focus:border-blue-500"
+                placeholder="0"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-bold text-gray-900 mb-2"
+                >&nbsp;</label
+              >
+              <select
+                id="_"
+                class="w-full px-3 py-2.5 border-2 border-gray-300 rounded-lg bg-gray-50 text-gray-700 text-sm focus:outline-none focus:border-blue-500"
+              >
+                <option value="mois">Mois</option>
+                <option value="annees">Années</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-bold text-gray-900 mb-2"
+              >Salaire mensuel (Dh)</label
+            >
+            <input
+              type="number"
+              id="salaire"
+              class="w-full px-3 py-2.5 border-2 border-gray-300 rounded-lg bg-gray-50 text-gray-700 text-sm focus:outline-none focus:border-blue-500"
+              placeholder="0"
+            />
+          </div>
+
+          <!--------------------------------------------------BOUTONS - CALCULER + REINITIALISER-------------------------------------------------->
+
+          <div class="flex gap-3 pt-2">
+            <button
+              id="btnCalculate"
+              class="flex-1 bg-slate-600 hover:bg-slate-700 text-white py-3 rounded-lg font-semibold transition shadow-md text-sm flex items-center justify-center"
+            >
+              <i class="fas fa-calculator mr-2"></i>Calculer
+            </button>
+            <button
+              id="btnEnvoye"
+              class="flex-1 bg-slate-600 hover:bg-slate-700 text-white py-3 rounded-lg font-semibold transition shadow-md text-sm"
+            >
+              Réinitialiser
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--------------------------------------------------RESULTATS DU SIMULATION-------------------------------------------------->
+
+      <div
+        id="results"
+        class="bg-gradient-to-b from-slate-300 via-slate-200 to-slate-100 rounded-2xl shadow-xl border-2 border-gray-300 overflow-hidden"
+      >
+        <h2
+          class="text-center text-base font-bold text-gray-900 py-3 bg-slate-400 border-b-2 border-slate-500"
+        >
+          Résultats de la simulation
+        </h2>
+        <div class="p-6">
+          <div class="space-y-3 mb-6">
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-900 font-medium"
+                >Mensualité estimée :</span
+              >
+              <span id="mois" class="font-bold text-gray-900 text-sm"
+                >00.00 DH</span
+              >
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-900 font-medium"
+                >Total des intérêts :</span
+              >
+              <span id="totalInteret" class="font-bold text-gray-900 text-sm"
+                >00.00 DH</span
+              >
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-900 font-medium"
+                >Montant total à rembourser :</span
+              >
+              <span id="montantTotal" class="font-bold text-gray-900 text-sm"
+                >-00.00 DH</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="flex justify-between text-xs text-gray-700 font-medium mb-2"
+          >
+            <span>Capacité</span>
+            <span>Maturité</span>
+          </div>
+          <div
+            class="w-full bg-gray-400 rounded-sm h-5 shadow-inner border border-gray-500"
+          >
+            <div
+              id="capacityBar"
+              class="bg-gradient-to-r from-slate-600 to-slate-700 h-full rounded-sm transition-all Durée-500 shadow-md"
+              style="width: 50%"
+            ></div>
+          </div>
+
+          <div class="mt-5">
+            <a href="Résultat.html">
+              <button
+                id="voir-détails"
+                class="w-full bg-[#0d1b2a] hover:bg-[#1b263b] text-white py-2.5 rounded-lg text-sm font-semibold transition shadow-md flex items-center justify-center"
+              >
+                <i class="fas fa-info-circle mr-2"></i>Voir les détails du prêt
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-------------------------------------------------- FOOTER -------------------------------------------------->
+
+    <footer class="bg-[#0d1b2a] text-center text-[#e0e1dd] py-4 text-sm">
+    <p class="font-semibold">EstimaCrédit</p>
+    <p>Simulateur de prêt intelligent – Planifiez votre avenir financier 💰</p>
+    <p>© 2025 EstimaCrédit. Tous droits réservés. | Réalisé avec  par [Med_kr]</p>
+  </footer>
+
+    <!-------------------------------------------------------- JS ------------------------------------------------------>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let lastResults = {};
+
+        function calculateLoan() {
+          const Type_Prêt = document.getElementById("Type_Prêt").value;
+          const Montant_Prêt =
+            parseFloat(document.getElementById("Montant_Prêt").value) || 0;
+          const Durée = parseFloat(document.getElementById("Durée").value) || 0;
+          const Durée_Type = document.getElementById("_").value;
+          const Salaire =
+            parseFloat(document.getElementById("salaire").value) || 0;
+
+          if (!Type_Prêt || Montant_Prêt <= 0 || Durée <= 0 || Salaire <= 0) {
+            alert("Veuillez remplir tous les champs correctement");
+            return;
+          }
+
+          const DuréeInMois = Durée_Type === "annees" ? Durée * 12 : Durée;
+
+          let annualRate;
+          switch (Type_Prêt) {
+            case "personnel":
+              annualRate = 0.07;
+              break;
+            case "immobilier":
+              annualRate = 0.045;
+              break;
+            case "auto":
+              annualRate = 0.06;
+              break;
+            case "terrain":
+              annualRate = 0.05;
+              break;
+            case "entreprise":
+              annualRate = 0.055;
+              break;
+            case "mariage":
+              annualRate = 0.065;
+              break;
+            case "etudiant":
+              annualRate = 0.035;
+              break;
+            default:
+              annualRate = 0.05;
+          }
+
+          const monthlyRate = annualRate / 12;
+          const mensualite =
+            (Montant_Prêt *
+              (monthlyRate * Math.pow(1 + monthlyRate, DuréeInMois))) /
+            (Math.pow(1 + monthlyRate, DuréeInMois) - 1);
+          const montantTotal = mensualite * DuréeInMois;
+          const totalInteret = montantTotal - Montant_Prêt;
+          const capacity = (mensualite / Salaire) * 100;
+
+          document.getElementById("mois").textContent =
+            mensualite.toFixed(2) + " DH";
+          document.getElementById("totalInteret").textContent =
+            totalInteret.toFixed(2) + " DH";
+          document.getElementById("montantTotal").textContent =
+            montantTotal.toFixed(2) + " DH";
+          const bar = document.getElementById("capacityBar");
+          bar.style.width = Math.min(capacity, 100) + "%";
+          if (capacity > 40) {
+            bar.className =
+              "bg-gradient-to-r from-red-600 to-red-700 h-full rounded-sm transition-all duration-500 shadow-md";
+          } else {
+            bar.className =
+              "bg-gradient-to-r from-slate-600 to-slate-700 h-full rounded-sm transition-all duration-500 shadow-md";
+          }
+
+          /*-------------------------------------------------------- ENREGESTRIE POUR P-RESULTAT ------------------------------------------------------*/
+
+          lastResults = {
+            typePret: Type_Prêt,
+            montant: Montant_Prêt,
+            duree: Durée,
+            taux: (annualRate * 100).toFixed(2),
+            mensualite: mensualite,
+            interets: totalInteret,
+            total: montantTotal,
+          };
+        }
+
+        document
+          .getElementById("btnCalculate")
+          .addEventListener("click", calculateLoan);
+
+        document
+          .getElementById("voir-détails")
+          .addEventListener("click", () => {
+            if (!lastResults.montant) {
+              alert("Veuillez d'abord effectuer une simulation.");
+              return;
+            }
+            /*-------------------------------------------------------- ENREGESTRIE DANS LOCALESTORRAGE ------------------------------------------------------*/
+
+            localStorage.setItem("resultatPret", JSON.stringify(lastResults));
+            window.location.href = "Résultat.html";
+          });
+
+        document
+          .getElementById("btnEnvoye")
+          .addEventListener("click", () => location.reload());
+      });
+    </script>
+  </body>
+</html>
