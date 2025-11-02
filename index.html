@@ -6,29 +6,19 @@
     <title>Estima Crédit - Accueil</title>
 
     <!--------------------------------------------------FONT FAMILY-------------------------------------------------->
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!----------------------------------------------------TAILWIND---------------------------------------------------->
-
     <link rel="stylesheet" href="src/output.css" />
 
     <!----------------------------------------------------STYLE CSS---------------------------------------------------->
-
     <style>
       body {
-        background-color: #E0E1DD;
+        background-color: #e0e1dd;
         font-family: "Poppins", sans-serif;
-      }
-
-      .nav-link {
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      }
-
-      .nav-link:hover {
-        background-color: #d6e0f0;
-        transform: scale(1.05);
       }
 
       .btn-main {
@@ -42,96 +32,112 @@
       }
     </style>
   </head>
+
   <!----------------------------------------------------------BODY----------------------------------------------------------->
-  
   <body class="flex flex-col min-h-screen">
-    
-    
-  <!----------------------------------------------------------HEADER----------------------------------------------------------->
-  
-  <header class="bg-white shadow-md sticky top-0 z-50">
-  <nav class="flex items-center justify-between px-6 py-3">
-
-  <!--------------------------------------------------LOGO DE ECTIMACREDIT-------------------------------------------------->
-
-    <a href="index.html">
-      <img src="images/Logo.png" alt="Logo du site" class="w-40 md:w-32">
-    </a>
-
-  <!--------------------------------------------------AFFICHAGE MENU MOBILE-------------------------------------------------->
-
-    <div class="md:hidden">
-      <input type="checkbox" id="menu" class="hidden peer">
-      <label for="menu" class="cursor-pointer">
-        <img src="images/menu.png" alt="Menu" class="w-7 h-7">
-      </label>
-
-      <menu class="hidden peer-checked:flex absolute top-14 right-4 bg-[#0d1b2a] text-white rounded-lg shadow-lg flex-col gap-3 p-4 w-56">
-        <label for="menu" class="text-right cursor-pointer text-lg flex justify-center items-center">✖</label>
-        
-        <a href="#Accueil"
-          class="nav-link px-4 py-2 bg-[#e2e8f0] rounded-lg text-[#1b2a41] font-medium transition duration-300 hover:bg-[#0d1b2a] hover:text-white hover:shadow-[0_0_15px_2px_#778DA9]">
-          Accueil
+    <!----------------------------------------------------------HEADER----------------------------------------------------------->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+      <nav class="flex items-center justify-between px-6 py-3">
+        <!--------------------------------------------------LOGO DE ECTIMACREDIT-------------------------------------------------->
+        <a href="index.html">
+          <img src="images/Logo.png" alt="Logo du site" class="w-40 md:w-32" />
         </a>
-        <a href="Simulation.html"
-          class="nav-link px-4 py-2 bg-[#e2e8f0] rounded-lg text-[#1b2a41] font-medium transition duration-300 hover:bg-[#0d1b2a] hover:text-white hover:shadow-[0_0_15px_2px_#778DA9]">
-          Simulation
-        </a>
-        <a href="Résultat.html"
-          class="nav-link px-4 py-2 bg-[#e2e8f0] rounded-lg text-[#1b2a41] font-medium transition duration-300 hover:bg-[#0d1b2a] hover:text-white hover:shadow-[0_0_15px_2px_#778DA9]">
-          Résultats
-        </a>
-        <a href="A-Propos.html"
-          class="nav-link px-4 py-2 bg-[#e2e8f0] rounded-lg text-[#1b2a41] font-medium transition duration-300 hover:bg-[#0d1b2a] hover:text-white hover:shadow-[0_0_15px_2px_#778DA9]">
-          À propos
-        </a>
-      </menu>
-    </div>
 
-    <!--------------------------------------------------AFFICHAGE MENU DESKTOP-------------------------------------------------->
+        <!--------------------------------------------------AFFICHAGE MENU MOBILE-------------------------------------------------->
+        <div class="md:hidden">
+          <input type="checkbox" id="menu" class="hidden peer" />
+          <label for="menu" class="cursor-pointer">
+            <img src="images/menu.png" alt="Menu" class="w-7 h-7" />
+          </label>
 
-    <menu class="hidden md:flex items-center gap-6 text-green-800 font-semibold">
-      <a href="#Accueil"
-        class="nav-link px-4 py-2 bg-[#e2e8f0] rounded-lg text-[#1b2a41] font-medium transition duration-300 hover:bg-[#0d1b2a] hover:text-white hover:shadow-[0_0_15px_2px_#778DA9]">
-        Accueil
-      </a>
-      <a href="Simulation.html"
-        class="nav-link px-4 py-2 bg-[#e2e8f0] rounded-lg text-[#1b2a41] font-medium transition duration-300 hover:bg-[#0d1b2a] hover:text-white hover:shadow-[0_0_15px_2px_#778DA9]">
-        Simulation
-      </a>
-      <a href="Résultat.html"
-        class="nav-link px-4 py-2 bg-[#e2e8f0] rounded-lg text-[#1b2a41] font-medium transition duration-300 hover:bg-[#0d1b2a] hover:text-white hover:shadow-[0_0_15px_2px_#778DA9]">
-        Résultats
-      </a>
-      <a href="A-Propos.html"
-        class="nav-link px-4 py-2 bg-[#e2e8f0] rounded-lg text-[#1b2a41] font-medium transition duration-300 hover:bg-[#0d1b2a] hover:text-white hover:shadow-[0_0_15px_2px_#778DA9]">
-        À propos
-      </a>
-    </menu>
-  </nav>
-</header>
+          <menu
+            class="hidden peer-checked:flex absolute top-14 right-4 bg-[#0d1b2a] text-white rounded-lg shadow-lg flex-col gap-3 p-4 w-56"
+          >
+            <label
+              for="menu"
+              class="text-right cursor-pointer text-lg flex justify-center items-center"
+              >✖</label
+            >
 
+            <a
+              href="index.html"
+              class="nav-link px-4 py-2 bg-[#e2e8f0] rounded-lg text-[#1b2a41] font-medium transition duration-300 hover:bg-[#0d1b2a] hover:text-white hover:shadow-[0_0_15px_2px_#778DA9]"
+            >
+              Accueil
+            </a>
+            <a
+              href="Simulation.html"
+              class="nav-link px-4 py-2 bg-[#e2e8f0] rounded-lg text-[#1b2a41] font-medium transition duration-300 hover:bg-[#0d1b2a] hover:text-white hover:shadow-[0_0_15px_2px_#778DA9]"
+            >
+              Simulation
+            </a>
+            <a
+              href="Résultat.html"
+              class="nav-link px-4 py-2 bg-[#e2e8f0] rounded-lg text-[#1b2a41] font-medium transition duration-300 hover:bg-[#0d1b2a] hover:text-white hover:shadow-[0_0_15px_2px_#778DA9]"
+            >
+              Résultats
+            </a>
+            <a
+              href="A-Propos.html"
+              class="nav-link px-4 py-2 bg-[#e2e8f0] rounded-lg text-[#1b2a41] font-medium transition duration-300 hover:bg-[#0d1b2a] hover:text-white hover:shadow-[0_0_15px_2px_#778DA9]"
+            >
+              À propos
+            </a>
+          </menu>
+        </div>
 
-    </header> 
+        <!--------------------------------------------------AFFICHAGE MENU DESKTOP-------------------------------------------------->
+        <menu
+          class="hidden md:flex items-center gap-6 text-green-800 font-semibold"
+        >
+          <a
+            href="index.html"
+            class="nav-link px-4 py-2 bg-[#e2e8f0] rounded-lg text-[#1b2a41] font-medium transition duration-300 hover:bg-[#0d1b2a] hover:text-white hover:shadow-[0_0_15px_2px_#778DA9]"
+          >
+            Accueil
+          </a>
+          <a
+            href="Simulation.html"
+            class="nav-link px-4 py-2 bg-[#e2e8f0] rounded-lg text-[#1b2a41] font-medium transition duration-300 hover:bg-[#0d1b2a] hover:text-white hover:shadow-[0_0_15px_2px_#778DA9]"
+          >
+            Simulation
+          </a>
+          <a
+            href="Résultat.html"
+            class="nav-link px-4 py-2 bg-[#e2e8f0] rounded-lg text-[#1b2a41] font-medium transition duration-300 hover:bg-[#0d1b2a] hover:text-white hover:shadow-[0_0_15px_2px_#778DA9]"
+          >
+            Résultats
+          </a>
+          <a
+            href="A-Propos.html"
+            class="nav-link px-4 py-2 bg-[#e2e8f0] rounded-lg text-[#1b2a41] font-medium transition duration-300 hover:bg-[#0d1b2a] hover:text-white hover:shadow-[0_0_15px_2px_#778DA9]"
+          >
+            À propos
+          </a>
+        </menu>
+      </nav>
+    </header>
 
     <!--------------------------------------------------MAIN -- DETAIL DE ECTIMACREDIT-------------------------------------------------->
 
-    <main class="flex-grow flex flex-col justify-center items-center mt-28 px-4">
-      <div style="background-image: url(/images/arriere.png); background-size: cover;"
+    <main
+      class="flex-grow flex flex-col justify-center items-center mt-28 px-4"
+    >
+      <div
+        style="
+          background-image: url(/images/arriere.png);
+          background-size: cover;
+        "
         class="bg-white shadow-lg rounded-xl p-6 max-w-2xl text-center border border-gray-200"
       >
-  
-        <div  class="bg-white/70 rounded-lg p-4 mx-auto shadow-sm z-10 max-w-md"
-        >
+        <div class="bg-white/70 rounded-lg p-4 mx-auto shadow-sm z-10 max-w-md">
           <div class="flex justify-center items-center space-x-2 mb-3">
             <h2 class="text-2xl font-bold text-[#1b2a41]">
               Estima<span class="text-[#3a6ea5]">Crédit</span>
             </h2>
-
           </div>
 
-          
-            <p class="text-[#1b2a41] text-sm leading-relaxed">
+          <p class="text-[#1b2a41] text-sm leading-relaxed">
             Bienvenue sur Estima Crédit,<br />
             le simulateur de prêts intelligent.<br /><br />
             Calculez la santé de votre foyer, votre environnement financier et
@@ -140,28 +146,30 @@
             avenir financier en toute sérénité.<br />
             Ne tombez plus dans les pièges des prêts mal compris — anticipez,
             comparez et décidez en toute confiance.
-            </p>
-          
+          </p>
         </div>
 
         <button
-          class="mt-8 px-8 py-3 bg-[#0d1b2a]  text-white font-semibold rounded-xl btn-main hover: text-red shadow-[0_0_25px_4px_#778DA9]"
+          class="mt-8 px-8 py-3 bg-[#0d1b2a] text-white font-semibold rounded-xl btn-main hover: text-red shadow-[0_0_25px_4px_#778DA9]"
         >
           Commencer la simulation
         </button>
       </div>
     </main>
 
-    <!-------------------------------------------------- FOOTER -------------------------------------------------->
+    <!--------------------------------------------------FOOTER-------------------------------------------------->
+    <footer class="bg-[#0d1b2a] text-center text-[#e0e1dd] py-4 text-sm">
+      <p class="font-semibold">EstimaCrédit</p>
+      <p>
+        Simulateur de prêt intelligent – Planifiez votre avenir financier 💰
+      </p>
+      <p>
+        &copy; 2025 EstimaCrédit. Tous droits réservés. | Réalisé avec par
+        [Med_kr]
+      </p>
+    </footer>
 
-  <footer class="bg-[#0d1b2a] text-center text-[#e0e1dd] py-4 text-sm">
-    <p class="font-semibold">EstimaCrédit</p>
-    <p>Simulateur de prêt intelligent – Planifiez votre avenir financier 💰</p>
-    <p>© 2025 EstimaCrédit. Tous droits réservés. | Réalisé avec  par [Med_kr]</p>
-  </footer>
-
-
-  <!-------------------------------------------------------- JS ------------------------------------------------------>
+    <!-------------------------------------------------------- JS ------------------------------------------------------>
     <script>
       const menuBtn = document.getElementById("menu-btn");
       const menuMobile = document.getElementById("menu-mobile");
